@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    int m = 1;
+    int arr2[1000];
+    printf("Nhap chieu dai cua mang: ");
+    scanf("%d",&n);
+    int arr1[n];
+    for(int i = 0; i < n ; i++){
+        scanf("%d",&arr1[i]);
+    }
+    arr2[0]=arr1[0];
+
+    for(int i = 1; i<n;i++){
+        Nhan:
+        if(i==n){
+            break;
+        }
+        for(int j = 0;j<m;j++){
+            if(arr2[j]==arr1[i]){
+                i++;
+                goto Nhan;
+            }
+            else{
+                arr2[m]=arr1[i];
+            }
+        }
+        m++;
+    }
+    
+    for(int i = 0; i <m; i++){
+        printf("%d ",arr2[i]);
+    }
+
+}
